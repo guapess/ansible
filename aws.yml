@@ -1,1 +1,17 @@
+- name: create EC2 Instance
+  hosts: localhost
+  tasks:
+          - ec2:
+                 key_name: kempelo
+                 instance_type: t2.micro
+                 image: ami-01e7ca2ef94a0ae86
+                 wait: yes
+                 group: sec-group
+                 count: 5
+                 vpc_subnet_id: subnet-c1dc22aa
+                 assign_public_ip: yes
+                 region: us-east-2
+            register: out
+          - debug:
+                 msg: "{{out}}"
 
