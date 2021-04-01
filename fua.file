@@ -1,0 +1,3 @@
+echo "git needs you practicing, to be perfect" >file1
+useradd chrome
+cat file1
